@@ -1,13 +1,18 @@
 #include <iostream>
 #include "Constants.h"
+#include "Staff.h"
 using namespace std;
 
-class Staff extends Employee{
-    public:
-        float hourlyRate;
-        double monthlySalary;    
+class Staff extends Employee{  
     float hourlyRate = STAFF_MONTHLY_HOURS_WORKED;
     double monthlySalary = FACULTY_MONTHY_SALARY;
+
+    double setHourlyRate(double r){
+        hourlyRate = r;
+    }
+    void getHourlyRate(){
+        return hourlyRate
+    }
     double monthlyEarning(){
         monthlySalary = monthlySalary  * hourlyRate;
         return monthlySalary
