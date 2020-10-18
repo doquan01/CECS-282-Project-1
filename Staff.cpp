@@ -10,7 +10,11 @@ class Staff extends Employee{
         cout << "\nEmployee ID: " << idNumber;
         cout << "\nEmployee Name: " << firstName, lastName;
         cout << "\nBirthday: " << birthDate;
-        cout << "\nFull Time Monthly Salary: " << monthlySalary;
+        cout << "\nFull Time Monthly Salary: " << hourlyRate * STAFF_MONTHLY_HOURS_WORKED;
         }
     }   
+    void monthlySalary(){
+
+    }
+
 }
