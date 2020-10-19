@@ -1,4 +1,4 @@
-#ifdef STAFF_H
+#ifndef STAFF_H
 #define STAFF_H
 
 #include "Employee.h"
