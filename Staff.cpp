@@ -18,11 +18,11 @@ class Staff{
         return monthlySalary;
     }
     void Staff::putData(){
-        cout << "\nEmployee ID: " << idNumber;
+        cout << "\nEmployee ID: " << id;
         cout << "\nEmployee Name: " << firstName, lastName;
         cout << "\nBirthday: " << birthDate;
         cout << "\nFull Time Monthly Salary: " << monthlyEarning();
     } 
 
-    Staff::Staff(double r):Employee(int idNumber, string firstName, string lastName, string birthDate);   
+    Staff::Staff(double r):Employee(int id, string firstName, string lastName, string birthDate);   
 }
