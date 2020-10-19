@@ -18,9 +18,6 @@ class Staff{
         monthlySalary = monthlySalary  * hourlyRate;
         return monthlySalary;
     }
-
-
-
     void Staff::putData(){
         cout << "\nEmployee ID: " << idNumber;
         cout << "\nEmployee Name: " << firstName, lastName;
@@ -28,5 +25,5 @@ class Staff{
         cout << "\nFull Time Monthly Salary: " << monthlyEarning();
     } 
 
-    Staff::Staff(Employee(int idNumber, string firstName, string lastName, string birthDate));   
+    Staff::Staff(double r):Employee(int idNumber, string firstName, string lastName, string birthDate);   
 }
