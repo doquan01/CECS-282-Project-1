@@ -3,14 +3,16 @@
 
 using namespace std;
 
-Employee(string l, string f, int id, Sex, string b ){
+Employee(string l, string f, int id, Sex, string b){
 	lastName = l;
-	fitstName = f;
+	firstName = f;
 	ID = id;
 	birthDate = b;
 }
 void Employee::putData(){
-
+    cout << "\nEmployee ID: " << getID();
+    cout << "\nEmployee Name: " << getFirstName(), getLastName();
+    cout << "\nBirthday: " << getBirthDate();
 }
 string Employee::getBirthDate(){
 
