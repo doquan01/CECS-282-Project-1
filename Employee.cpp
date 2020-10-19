@@ -3,11 +3,7 @@
 
 using namespace std;
 
-<<<<<<< HEAD
-Employee(string l, string f, int id, Sex, string b){
-=======
-Employee::Employee(string l, string f, int id, Sex, string b ){
->>>>>>> 8a05cad25780643061a6519e9193e8f9a42db5e4
+Employee::Employee(string l, string f, string id, Sex, string b ){
 	lastName = l;
 	firstName = f;
 	ID = id;
@@ -36,7 +32,7 @@ void Employee::setFirstName(string f){
 
 }
 
-void Employee::setID(int id){
+void Employee::setID(string id){
 
 }
 
@@ -54,7 +50,7 @@ string Employee::getLastName(){
 
 }
 
-int getID(){
+string getID(){
 
     
 }
