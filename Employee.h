@@ -12,7 +12,7 @@ class Employee{
 		string lastName;
 		string firstName;
 		string ID;
-		
+		enum Sex {M,F};
 		string birthDate;
 };
 #endif
