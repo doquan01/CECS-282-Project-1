@@ -20,7 +20,7 @@ class Employee{
 		string getID();
 		string getSex();
 		string getBirthDate();
-		virtual void monthlyEarning();
+		virtual double monthlyEarning() = 0;
 	protected:
 		string lastName;
 		string firstName;
