@@ -24,7 +24,7 @@ void Employee::setFirstName(string f){
 void Employee::setID(string id){
 	ID = id; 
 }
-void Employee::setSex(Sex){
+void Employee::setSex(Sex s){
 	
 }
 void Employee::setBirthDate(string b){

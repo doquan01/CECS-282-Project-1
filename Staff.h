@@ -9,11 +9,11 @@ using namespace std;
 class Staff: public Employee
 {
 	public:
-		Staff(double r);
 		void setHourlyRate(double r);
 		double getHourlyRate();
 		void putData();
 		double monthlyEarning();
+		Staff(string lastName, string firstName, string id, string birthDate, double r);
 	protected:
 		double hourlyRate;
 };

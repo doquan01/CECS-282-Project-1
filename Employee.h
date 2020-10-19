@@ -13,7 +13,7 @@ class Employee{
 		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(string id);
-		void setSex(Sex);
+		void setSex(Sex s);
 		void setBirthDate(string b);
 		string getLastName();
 		string getFirstName();
