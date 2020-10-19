@@ -14,43 +14,39 @@ void Employee::putData(){
     cout << "\nEmployee Name: " << getFirstName(), getLastName();
     cout << "\nBirthday: " << getBirthDate();
 }
-string Employee::getBirthDate(){
-
-}
 
 void Employee::setLastName(string l){
-
+	lastName = l;
 }
-
-void Employee::setBirthDate(string b){
-
-
-}
-
 void Employee::setFirstName(string f){
-
-
+	firstName = f;
 }
-
 void Employee::setID(string id){
-
+	ID = id; 
 }
-
+void Employee::setSex(Sex){
+	
+}
+void Employee::setBirthDate(string b){
+	birthDate = b;
+}
+string Employee::getLastName(){
+	return lastName;
+}
+string Employee::getFirstName(){
+	return firstName;
+}
+string getID(){
+	return ID;
+}
 string Employee::getSex(){
 
 }
-
-string Employee::getFirstName(){
-
-
+string Employee::getBirthDate(){
+	return birthDate;
 }
 
-string Employee::getLastName(){
 
 
-}
 
-string getID(){
 
-    
-}
