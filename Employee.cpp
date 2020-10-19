@@ -3,7 +3,11 @@
 
 using namespace std;
 
+<<<<<<< HEAD
 Employee(string l, string f, int id, Sex, string b){
+=======
+Employee::Employee(string l, string f, int id, Sex, string b ){
+>>>>>>> 8a05cad25780643061a6519e9193e8f9a42db5e4
 	lastName = l;
 	firstName = f;
 	ID = id;
