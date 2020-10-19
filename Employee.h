@@ -17,7 +17,7 @@ class Employee{
 		void setBirthDate(string b);
 		string getLastName();
 		string getFirstName();
-		int getID();
+		string getID();
 		string getSex();
 		string getBirthDate();
 		virtual void monthlyEarning();
@@ -25,7 +25,7 @@ class Employee{
 		string lastName;
 		string firstName;
 		string ID;
-		string sex;
+		Sex gender;
 		string birthDate;
 };
 #endif

@@ -36,7 +36,7 @@ string Employee::getLastName(){
 string Employee::getFirstName(){
 	return firstName;
 }
-string getID(){
+string Employee::getID(){
 	return ID;
 }
 string Employee::getSex(){
