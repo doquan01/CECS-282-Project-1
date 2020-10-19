@@ -9,7 +9,7 @@ using namespace std;
 class Staff: public Employee
 {
 	public:
-		Staff(double r);
+		Staff(double r = 160);
 		void setHourlyRate(double r);
 		double getHourlyRate();
 		void putData();

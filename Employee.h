@@ -9,7 +9,7 @@ class Employee{
 	public:
 		Employee();
 		void putData();
-		void setLastName(sting l);
+		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(int id);
 		void setSex();

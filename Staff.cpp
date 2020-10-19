@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Constants.h"
 #include "Staff.h"
-#include <string.h>
 using namespace std;
 
 class Staff{  
