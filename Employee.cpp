@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Employee::Employee(string l, string f, string id, Sex, string b ){
+Employee::Employee(string l, string f, string id, string b ){
 	lastName = l;
 	firstName = f;
 	ID = id;

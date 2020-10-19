@@ -8,7 +8,7 @@ using namespace std;
 enum Sex {M,F};
 class Employee{
 	public:
-		Employee(string l, string f, string id, Sex, string b);
+		Employee(string l, string f, string id, string b);
 		void putData();
 		void setLastName(string l);
 		void setFirstName(string f);
