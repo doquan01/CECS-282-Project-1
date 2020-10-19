@@ -4,10 +4,10 @@
 using namespace std;
 
 Employee(string l, string f, int id, Sex, string b ){
-	lastName = last;
-	fitstName = first;
-	ID = iden;
-	birthDate = bir;
+	lastName = l;
+	fitstName = f;
+	ID = id;
+	birthDate = b;
 }
 void Employee::putData(){
 
