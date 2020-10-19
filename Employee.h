@@ -18,7 +18,7 @@ class Employee{
 		string getLastName();
 		string getFirstName();
 		int getID();
-		String getSex();
+		string getSex();
 		string getBirthDate();
 		virtual void monthlyEarning();
 	protected:
