@@ -5,26 +5,27 @@
 
 using namespace std;
 
+enum Sex {M,F};
 class Employee{
 	public:
-		Employee();
+		Employee(string l, string f, int id, Sex, string b);
 		void putData();
 		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(int id);
-		void setSex();
+		void setSex(Sex);
 		void setBirthDate(string b);
 		string getLastName();
 		string getFirstName();
 		int getID();
-		enum getSex();
+		String getSex();
 		string getBirthDate();
 		virtual void monthlyEarning();
 	protected:
 		string lastName;
 		string firstName;
 		string ID;
-		enum Sex {M,F};
+		string sex;
 		string birthDate;
 };
 #endif
