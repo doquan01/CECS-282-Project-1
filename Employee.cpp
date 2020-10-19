@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Employee(string l, string f, int id, Sex, string b ){
+	lastName = last;
+	fitstName = first;
+	ID = iden;
+	birthDate = bir;
+}
 void Employee::putData(){
 
 }
