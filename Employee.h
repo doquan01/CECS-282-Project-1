@@ -13,7 +13,7 @@ class Employee{
 		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(string id);
-		void setSex(Sex s);
+		void setSex(Sex s, string g);
 		void setBirthDate(string b);
 		string getLastName();
 		string getFirstName();
@@ -25,7 +25,7 @@ class Employee{
 		string lastName;
 		string firstName;
 		string ID;
-		Sex gender;
+		string gender;
 		string birthDate;
 };
 #endif
