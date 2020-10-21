@@ -10,14 +10,14 @@ class Faculty: public Employee
 {
 	public:
 		void setLevel();
-		void setEducation();
-		void getEducation(); //change void type so it returns education object
+		void setEducation(string d, string m, int r);
+		Education getEducation();
 		string getLevel();
 		double monthlyEarning();
 		void putData();
-		Faculty(string lastname, string firstname, string id, string birthdate, string level, string education);//put appropriate data tpyes
+		Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r);//put appropriate data tpyes
 	protected:
 		Level pos;
-		Education edu; //need education object
+		Education edu;
 };
 #endif
