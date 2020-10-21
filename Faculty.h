@@ -2,14 +2,15 @@
 #define Faculty_H
 #include <iostream>
 #include "Employee.h"
+#include "Education.h"
 
 using namespace std;
 
-enum Level = {AS, AO, FU};
+enum Level {AS, AO, FU};
 class Faculty: public Employee
 {
 	public:
-		void setLevel();
+		void setLevel(Level l);
 		void setEducation(string d, string m, int r);
 		Education getEducation();
 		string getLevel();
