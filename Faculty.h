@@ -13,9 +13,9 @@ class Faculty: public Employee
 		void setEducation();
 		void getEducation(); //change void type so it returns education object
 		string getLevel();
-		void monthlyEarning();
+		double monthlyEarning();
 		void putData();
-		Faculty();//put appropriate data tpyes
+		Faculty(string lastname, string firstname, string id, string birthdate);//put appropriate data tpyes
 	protected:
 		string Level;
 		Education edu; //need education object

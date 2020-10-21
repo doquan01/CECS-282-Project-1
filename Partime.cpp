@@ -15,6 +15,6 @@ void Partime::putData(){
 double Partime::monthlyEarning(){
 	
 }
-Partime::Partime(string lastName, string firstName, string id, string birthDate, double r, int weekHours):Staff(string lastName, string firstName, string id, string birthDate, double r){
+Partime::Partime(string lastName, string firstName, string id, string birthDate, double r, int weekHours):Staff(lastName, firstName, id, birthDate, r){
 	hoursPerWeek = weekHours;
 }
