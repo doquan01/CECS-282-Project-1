@@ -9,6 +9,6 @@
 using namespace std;
 
 int main(){
-std::vector<Employee*>= {new Staff("Allen", "Paita", "123", M, "2/23/59", 50.00)};
-	
+Staff *s1 = new Staff("Allen", "Paita", "123", M, "2/23/59", 50.00);
+s1->putData();
 }
