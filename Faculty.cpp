@@ -8,7 +8,9 @@ void Faculty::setLevel(Level l){
 	pos = l;
 }
 void Faculty::setEducation(string d, string m, int r){
-	edu.Education(d,m,r);
+	edu.setDegree(d);
+	edu.setMajor(m);
+	edu.setResearch(r);
 }
 Education Faculty:: getEducation(){
 	return edu;
@@ -39,6 +41,8 @@ void Faculty::putData(){
 	cout<< "Monthly Salary: " << monthlyEarning()<<endl;
 }
 Faculty::Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r):Employee(lastName, firstName, id, birthDate){
-	edu.Education(d,m,r);
+	edu.setDegree(d);
+	edu.setMajor(m);
+	edu.setResearch(r);
 	pos = l;
 }
