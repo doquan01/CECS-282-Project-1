@@ -21,7 +21,9 @@ void Staff::putData(){
 } 
 Staff::Staff(){
 	hourlyRate = 0;
+	monthlySalary = 0;
 }
 Staff::Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r):Employee(lastName, firstName, id, s, birthDate){
 	hourlyRate = r;
+	monthlySalary = monthlyEarning();
 }   
