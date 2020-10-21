@@ -13,7 +13,7 @@ void Faculty::setEducation(string d, string m, int r){
 Education Faculty:: getEducation(){
 	return edu;
 }
-string getLevel(){
+string Faculty::getLevel(){
 	switch(pos){
 		case AS:
 			return "Assistant Professor";
@@ -33,7 +33,7 @@ double Faculty::monthlyEarning(){
 			return (FACULTY_MONTHY_SALARY * 1.4);
 	}
 }
-void putData(){
+void Faculty::putData(){
 	Employee::putData();
 	cout<< "\nLevel: "<<getLevel() << endl;
 	cout<< "Monthly Salary: " << monthlyEarning()<<endl;
