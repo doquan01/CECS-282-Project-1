@@ -21,6 +21,6 @@ void monthlyEarning(){
 void putData(){
 	
 }
-Faculty::Faculty(string lastname, string firstname, string id, string birthdate):Employee(lastName, firstName, id, birthDate){//put appropriate data tpyes
+Faculty::Faculty(string lastname, string firstname, string id, string birthdate, string level, string education):Employee(lastName, firstName, id, birthDate){//put appropriate data tpyes
 
 }
