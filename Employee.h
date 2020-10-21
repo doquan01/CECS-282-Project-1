@@ -27,5 +27,6 @@ class Employee{
 		string ID;
 		string gender;
 		string birthDate;
+		Sex sexes;
 };
 #endif
