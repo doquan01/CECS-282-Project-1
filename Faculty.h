@@ -17,7 +17,7 @@ class Faculty: public Employee
 		void putData();
 		Faculty(string lastname, string firstname, string id, string birthdate, string level, string education);//put appropriate data tpyes
 	protected:
-		string Level;
+		Level pos;
 		Education edu; //need education object
 };
 #endif
