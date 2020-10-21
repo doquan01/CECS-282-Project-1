@@ -12,7 +12,7 @@ class Staff: public Employee
 		Staff();
 		void setHourlyRate(double r);
 		double getHourlyRate();
-		void putData();
+		virtual void putData();
 		double monthlyEarning();
 		Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r);
 	protected:
