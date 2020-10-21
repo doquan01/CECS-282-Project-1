@@ -40,6 +40,12 @@ void Faculty::putData(){
 	cout<< "\nLevel: "<<getLevel() << endl;
 	cout<< "Monthly Salary: " << monthlyEarning()<<endl;
 }
+Faculty::Faculty(){
+	pos = AS;
+	edu.setDegree("");
+	edu.setMajor("");
+	edu.setResearch(0);
+}
 Faculty::Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r):Employee(lastName, firstName, id, birthDate){
 	edu.setDegree(d);
 	edu.setMajor(m);

@@ -2,7 +2,12 @@
 #include "Employee.h"
 
 using namespace std;
-
+Employee::Employee(){
+	lastName = "";
+	firstName = "";
+	ID = "";
+	birthDate = "";
+}
 Employee::Employee(string l, string f, string id, string b){
 	lastName = l;
 	firstName = f;

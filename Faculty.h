@@ -16,7 +16,8 @@ class Faculty: public Employee
 		string getLevel();
 		double monthlyEarning();
 		void putData();
-		Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r);//put appropriate data tpyes
+		Faculty();
+		Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r);
 	protected:
 		Level pos;
 		Education edu;
