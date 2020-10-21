@@ -13,7 +13,7 @@ class Education{
 		string getDegree();
 		string getMajor();
 		int getResearch(); 
-		Education(string d, string m, int r);// needs more i think
+		Education(string d, string m, int r);
 	protected:
 		string Degree;
 		string Major;
