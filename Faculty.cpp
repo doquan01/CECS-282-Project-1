@@ -46,7 +46,7 @@ Faculty::Faculty(){
 	edu.setMajor("");
 	edu.setResearch(0);
 }
-Faculty::Faculty(string lastname, string firstname, string id, string birthdate, Level l, string d, string m, int r):Employee(lastName, firstName, id, birthDate){
+Faculty::Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, string d, string m, int r):Employee(lastName, firstName, id, s, birthDate){
 	edu.setDegree(d);
 	edu.setMajor(m);
 	edu.setResearch(r);

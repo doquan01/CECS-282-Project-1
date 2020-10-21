@@ -8,10 +8,11 @@ Employee::Employee(){
 	ID = "";
 	birthDate = "";
 }
-Employee::Employee(string l, string f, string id, string b){
+Employee::Employee(string l, string f, string id, Sex s, string b){
 	lastName = l;
 	firstName = f;
 	ID = id;
+	sexes = s;
 	birthDate = b;
 }
 void Employee::putData(){
@@ -29,23 +30,8 @@ void Employee::setFirstName(string f){
 void Employee::setID(string id){
 	ID = id; 
 }
-void Employee::setSex(Sex s, string g){
-	cout<<"\nEnter your sex";
-	cin>>g;
-	if(g == "M" || g == "Male"){
-		s = M;
-	}
-	else if(g == "F" || g == "Female"){
-		s = F;
-	}
-	switch(s){
-		case M:
-			gender = "M";
-			break;
-		case F:
-			gender = "F";
-			break;
-	}
+void Employee::setSex(Sex s){
+	sexes = s;
 }
 void Employee::setBirthDate(string b){
 	birthDate = b;
@@ -60,7 +46,12 @@ string Employee::getID(){
 	return ID;
 }
 string Employee::getSex(){
-	return gender;
+	switch(sexes){
+		case F:
+			return "F";
+		case M:
+			return "M";
+	}
 }
 string Employee::getBirthDate(){
 	return birthDate;

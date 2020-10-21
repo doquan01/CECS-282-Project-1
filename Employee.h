@@ -9,12 +9,12 @@ enum Sex {M,F};
 class Employee{
 	public:
 		Employee();
-		Employee(string l, string f, string id, string b);
+		Employee(string l, string f, string id, Sex s, string b);
 		void putData();
 		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(string id);
-		void setSex(Sex s, string g);
+		void setSex(Sex s);
 		void setBirthDate(string b);
 		string getLastName();
 		string getFirstName();
@@ -26,8 +26,7 @@ class Employee{
 		string lastName;
 		string firstName;
 		string ID;
-		string gender;
-		string birthDate;
 		Sex sexes;
+		string birthDate;
 };
 #endif

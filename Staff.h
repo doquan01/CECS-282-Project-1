@@ -13,7 +13,8 @@ class Staff: public Employee
 		double getHourlyRate();
 		void putData();
 		double monthlyEarning();
-		Staff(string lastName, string firstName, string id, string birthDate, double r);
+		Staff();
+		Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r);
 	protected:
 		double hourlyRate;
 };

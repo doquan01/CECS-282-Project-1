@@ -17,12 +17,12 @@ double Staff::monthlyEarning(){
     return monthlySalary;
 }
 void Staff::putData(){
-    cout << "\nEmployee ID: " << getID();
-    cout << "\nEmployee Name: " << getFirstName(), getLastName();
-    cout << "\nBirthday: " << getBirthDate();
+	Employee::putData();
     cout << "\nFull Time Monthly Salary: " << monthlyEarning();
 } 
-
-Staff::Staff(string lastName, string firstName, string id, string birthDate, double r):Employee(lastName, firstName, id, birthDate){
+Staff::Staff(){
+	hourlyRate = 0;
+}
+Staff::Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r):Employee(lastName, firstName, id, s, birthDate){
 	hourlyRate = r;
 }   
