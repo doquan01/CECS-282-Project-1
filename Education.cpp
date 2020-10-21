@@ -21,3 +21,8 @@ string Education::getMajor(){
 int Education::getResearch(){
 	return Research;
 } 
+Education::Education(string d, string m, int r){
+	Degree = d;
+	Major = m;
+	Research = r;
+}
