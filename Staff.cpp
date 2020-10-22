@@ -17,7 +17,7 @@ double Staff::monthlyEarning(){
 }
 void Staff::putData(){
 	Employee::putData();
-    cout << "\nFull Time Monthly Salary: " << monthlyEarning();
+    cout << "\nFull Time Monthly Salary: " << monthlyEarning()<<endl;
 } 
 Staff::Staff(){
 	hourlyRate = 0;
