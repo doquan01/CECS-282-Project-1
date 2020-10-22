@@ -11,13 +11,13 @@ class Faculty: public Employee
 {
 	public:
 		void setLevel(Level l);
-		void setEducation(Education e);
+		void setEducation(string d, string m, int r);
 		Education getEducation();
 		string getLevel();
 		double monthlyEarning();
 		void putData();
 		Faculty();
-		Faculty(string lastName, string firstName, string id, Sex s, string birthDate, Level l, Education e);
+		Faculty(string lastName, string firstName, string id, Sex s, string birthDate, Level l, string d, string m, int r);
 	private:
 		Level pos;
 		Education edu;
