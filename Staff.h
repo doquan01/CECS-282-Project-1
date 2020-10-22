@@ -17,5 +17,6 @@ class Staff: public Employee
 		Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r);
 	protected:
 		double hourlyRate;
+		double monthlySalary;
 };
 #endif
