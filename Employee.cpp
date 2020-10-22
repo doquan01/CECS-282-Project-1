@@ -2,11 +2,17 @@
 #include "Employee.h"
 
 using namespace std;
-
-Employee::Employee(string l, string f, string id, string b ){
+Employee::Employee(){
+	lastName = "";
+	firstName = "";
+	ID = "";
+	birthDate = "";
+}
+Employee::Employee(string l, string f, string id, Sex s, string b){
 	lastName = l;
 	firstName = f;
 	ID = id;
+	sexes = s;
 	birthDate = b;
 }
 void Employee::putData(){
@@ -25,7 +31,7 @@ void Employee::setID(string id){
 	ID = id; 
 }
 void Employee::setSex(Sex s){
-	
+	sexes = s;
 }
 void Employee::setBirthDate(string b){
 	birthDate = b;
@@ -40,7 +46,12 @@ string Employee::getID(){
 	return ID;
 }
 string Employee::getSex(){
-
+	switch(sexes){
+		case F:
+			return "F";
+		case M:
+			return "M";
+	}
 }
 string Employee::getBirthDate(){
 	return birthDate;
