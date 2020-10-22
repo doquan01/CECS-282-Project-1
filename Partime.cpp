@@ -9,10 +9,12 @@ void Partime::setHoursPerWeek(int weekHours){
 int Partime::getHoursPerWeek(){
 	return hoursPerWeek;
 }
+
 void Partime::putData(){
 	Employee::putData();
-	cout << "Monthly salary: " << monthlyEarning();
-	cout << "Monthly hours worked: " << STAFF_MONTHLY_HOURS_WORKED;
+	cout << "\nMonthly hours worked: " << hoursPerWeek * 4;
+	cout << "\nMonthly salary: " << monthlyEarning() << endl;
+	
 }
 double Partime::monthlyEarning(){
 	return hourlyRate * hoursPerWeek * 4;

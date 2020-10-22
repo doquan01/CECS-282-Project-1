@@ -3,8 +3,7 @@
 #include "Staff.h"
 using namespace std;
  
-double hourlyRate = STAFF_MONTHLY_HOURS_WORKED;
-double monthlySalary = FACULTY_MONTHY_SALARY;
+double staffHours = STAFF_MONTHLY_HOURS_WORKED;
 
 void Staff::setHourlyRate(double r){
     hourlyRate = r;
@@ -13,16 +12,18 @@ double Staff::getHourlyRate(){
     return hourlyRate;
 }
 double Staff::monthlyEarning(){
-    monthlySalary = monthlySalary  * hourlyRate;
+    monthlySalary = staffHours  * hourlyRate;
     return monthlySalary;
 }
 void Staff::putData(){
 	Employee::putData();
-    cout << "\nFull Time Monthly Salary: " << monthlyEarning();
+    cout << "\nFull Time Monthly Salary: " << monthlyEarning()<<endl;
 } 
 Staff::Staff(){
 	hourlyRate = 0;
+	monthlySalary = 0;
 }
 Staff::Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r):Employee(lastName, firstName, id, s, birthDate){
 	hourlyRate = r;
+	monthlySalary = monthlyEarning();
 }   
