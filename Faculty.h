@@ -17,7 +17,7 @@ class Faculty: public Employee
 		double monthlyEarning();
 		void putData();
 		Faculty();
-		Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, Education e);
+		Faculty(string lastName, string firstName, string id, Sex s, string birthDate, Level l, Education e);
 	private:
 		Level pos;
 		Education edu;
