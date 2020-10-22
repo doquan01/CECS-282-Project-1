@@ -11,14 +11,14 @@ class Faculty: public Employee
 {
 	public:
 		void setLevel(Level l);
-		void setEducation(string d, string m, int r);
+		void setEducation(Education e);
 		Education getEducation();
 		string getLevel();
 		double monthlyEarning();
 		void putData();
 		Faculty();
-		Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, string d, string m, int r);
-	protected:
+		Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, Education e);
+	private:
 		Level pos;
 		Education edu;
 };

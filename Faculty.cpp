@@ -7,10 +7,8 @@ using namespace std;
 void Faculty::setLevel(Level l){
 	pos = l;
 }
-void Faculty::setEducation(string d, string m, int r){
-	edu.setDegree(d);
-	edu.setMajor(m);
-	edu.setResearch(r);
+void Faculty::setEducation(Education e){
+	edu = e;
 }
 Education Faculty:: getEducation(){
 	return edu;
@@ -40,15 +38,10 @@ void Faculty::putData(){
 	cout<< "\nLevel: "<<getLevel() << endl;
 	cout<< "Monthly Salary: " << monthlyEarning()<<endl;
 }
-Faculty::Faculty(){
-	pos = AS;
-	edu.setDegree("");
-	edu.setMajor("");
-	edu.setResearch(0);
+Faculty::Faculty():Employee(){
+	edu = Education();
 }
-Faculty::Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, string d, string m, int r):Employee(lastName, firstName, id, s, birthDate){
-	edu.setDegree(d);
-	edu.setMajor(m);
-	edu.setResearch(r);
+Faculty::Faculty(string lastname, string firstname, string id, Sex s, string birthdate, Level l, Education e):Employee(lastName, firstName, id, s, birthDate){
+	setEducation(e);
 	pos = l;
 }
