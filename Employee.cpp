@@ -17,7 +17,7 @@ Employee::Employee(string l, string f, string id, Sex s, string b){
 }
 void Employee::putData(){
     cout << "\nEmployee ID: " << getID();
-    cout << "\nEmployee Name: " << getFirstName(), getLastName();
+    cout << "\nEmployee Name: " << getFirstName() << " " <<getLastName();
     cout << "\nBirthday: " << getBirthDate();
 }
 
