@@ -22,6 +22,5 @@ int main(){
 
     for (int i = 0; i < work.size(); i++) {
         work.at(i)->putData();
-        //test
     }
 }
