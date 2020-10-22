@@ -27,8 +27,8 @@ Partime *p1 = new Partime("Guzman", "Augusto", "455", F, "8/10/77", 35.00, 30);
 p1->putData();
 
 Partime *p2 = new Partime("Depirro", "Martin", "678", F, "9/15/87", 30.00, 15);
-p1->putData();
+p2->putData();
 
 Partime *p3 = new Partime("Aldaco", "Marque", "945", M, "11/24/88", 20.00, 35);
-p1->putData();
+p3->putData();
 }
