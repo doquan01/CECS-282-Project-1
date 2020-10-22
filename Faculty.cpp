@@ -35,7 +35,7 @@ double Faculty::monthlyEarning(){
 }
 void Faculty::putData(){
 	Employee::putData();
-	cout<< "\nLevel: "<<getLevel() << "Professor"<<endl;
+	cout<< "\nLevel: "<<getLevel() << "Professor "<<endl;
 	cout<< "Monthly Salary: " << monthlyEarning()<<endl;
 }
 Faculty::Faculty():Employee(){
