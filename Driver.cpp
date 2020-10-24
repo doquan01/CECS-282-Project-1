@@ -26,13 +26,10 @@ vector<Employee*> work = {
         
     for (int i = 0; i < work.size(); i++) {
         work.at(i)->putData();
-<<<<<<< Updated upstream
-=======
         if((work.at(i)->getID() == "455") || (work.at(i)->getID() == "678") || (work.at(i)->getID() == "945")){
             totalPart += work.at(i)->monthlyEarning();
         }
         totalEmploy += work.at(i)->monthlyEarning();
->>>>>>> Stashed changes
     }
     cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
     cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
