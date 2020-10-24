@@ -1,3 +1,5 @@
+//Quan Do, Hunter Lewis
+// CECS 282 Project - part 2
 #include <iostream>
 #include "Employee.h"
 #include "Staff.h"
