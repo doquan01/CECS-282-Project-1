@@ -7,6 +7,7 @@
 #include "Partime.h"
 #include "Constants.h"
 #include <vector>
+#include <typeinfo>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ vector<Employee*> work = {
         
     for (int i = 0; i < work.size(); i++) {
         work.at(i)->putData();
-        if((work.at(i)->getID() == "455") || (work.at(i)->getID() == "678") || (work.at(i)->getID() == "945")){
+        if(typeid(*work.at(i)) == typeid(Partime)){
             totalPart += work.at(i)->monthlyEarning();
         }
         totalEmploy += work.at(i)->monthlyEarning();
