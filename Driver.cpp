@@ -49,7 +49,21 @@ vector<Employee*> work = {
       switch(ch)
          {
          case 'a':            //add an employee to list
-            
+            char ch;
+            cout << "'f' to add a faculty"
+           "\n's' to add a Staff"
+           "\n'p' to add a partime"
+           "\nEnter selection: ";
+          cin >> ch;
+            switch(ch)
+      {                       //create specified Employee type
+         case 'f': work.at(work.size()) = new Faculty;   break;
+         case 's': work.at(work.size()) = new Staff; break;
+         case 'p': work.at(work.size()) = new Partime;   break;
+         default: cout << "\nUnknown Employee type\n"; return;
+      }
+         int n = work.size();
+         work.at(n++)->getdata();     //get Employee data from user
             break;
          case 'd':            //display all employees
              
