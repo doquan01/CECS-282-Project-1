@@ -8,6 +8,10 @@
 using namespace std;
 #include <process.h>          //for exit()
 #include "Employee.h"
+#include "Staff.h"
+#include "Faculty.h"
+#include "Partime.h"
+#include "Constants.h"
 
 const int LEN = 32;           //maximum length of last names
 const int MAXEM = 100;        //maximum number of Employees
