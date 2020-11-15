@@ -36,4 +36,36 @@ vector<Employee*> work = {
     }
     cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
     cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
+    char ch;
+   while(true)
+      {
+      cout << "'a' -- add data for an employee"
+              "\n'd' -- display data for all employees"
+              "\n'w' -- write all employee data to file"
+              "\n'r' -- read all employee data from file"
+              "\n'x' -- exit"
+              "\nEnter selection: ";
+      cin >> ch;
+      switch(ch)
+         {
+         case 'a':            //add an employee to list
+            
+            break;
+         case 'd':            //display all employees
+             
+            break;
+         case 'w':            //write employees to file
+             
+            break;
+         case 'r':            //read all employees from file
+             
+            break;
+         case 'x': 
+         exit(0);   //exit program
+         
+         default: 
+         cout << "\nUnknown command";
+         }  //end switch
+      }  //end while
+   return 0;
 }
