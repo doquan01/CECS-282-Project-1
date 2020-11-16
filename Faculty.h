@@ -15,6 +15,7 @@ class Faculty: public Employee
 		Education getEducation();
 		string getLevel();
 		double monthlyEarning();
+		void getData();
 		void putData();
 		Faculty();
 		Faculty(string lastName, string firstName, string id, Sex s, string birthDate, Level l, string d, string m, int r);

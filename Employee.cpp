@@ -17,7 +17,7 @@ Employee::Employee(string l, string f, string id, Sex s, string b){
 }
 void Employee::getData(){
     cin.ignore(10, '\n');
-    String s;
+    string s;
          cout << "   Enter last name: "; cin >> lastName;
          cout << "   Enter first name: "; cin >> firstName;
          cout << "   Enter ID number: ";      cin >> ID;

@@ -50,7 +50,7 @@ static vector<Employee*> work;
          default: cout << "\nUnknown Employee type\n"; return;
       }
          int n = work.size();
-         work.at(n++)->getdata();     //get Employee data from user
+         work.at(n++)->getData();     //get Employee data from user
             break;
          case 'd':            //display all employees
              

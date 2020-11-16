@@ -33,6 +33,27 @@ double Faculty::monthlyEarning(){
 			return (FACULTY_MONTHY_SALARY * 1.4);
 	}
 }
+void Faculty::getData(){
+    string l;
+    string d;
+    string m;
+    int r;
+    Employee::getData();
+    cout<<"Enter position level: "; cin>>l;
+    if(l == "AS"){
+        pos = AS;
+    }
+    else if(l == "AO"){
+        pos = AO;
+    }
+    else if(l == "FU"){
+        pos = FU;
+    }
+    cout<<"Enter degree: "; cin>>d;
+    cout<<"Enter major: "; cin>>m;
+    cout<<"Enter number of research: "; cin>>r;
+    edu = Education(d,m,r);
+}
 void Faculty::putData(){
 	Employee::putData();
 	cout<< "\n"<<getLevel() <<" Professor"<< endl;
