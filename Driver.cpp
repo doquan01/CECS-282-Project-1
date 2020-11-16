@@ -13,7 +13,7 @@ using namespace std;
 double totalPart = 0.0;
 double totalEmploy = 0.0;
 int main(){
-vector<Employee*> work = {   
+static vector<Employee*> work;  
    for (int i = 0; i < work.size(); i++) {
       work.at(i)->putData();
       if(typeid(*work.at(i)) == typeid(Partime)){

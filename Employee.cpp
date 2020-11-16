@@ -15,12 +15,26 @@ Employee::Employee(string l, string f, string id, Sex s, string b){
 	sexes = s;
 	birthDate = b;
 }
+void Employee::getData(){
+    cin.ignore(10, '\n');
+    String s;
+         cout << "   Enter last name: "; cin >> lastName;
+         cout << "   Enter first name: "; cin >> firstName;
+         cout << "   Enter ID number: ";      cin >> ID;
+         cout << "   Enter sex type: ";      cin >> s;
+         if(s == "M"){
+             sexes = M;
+         }
+         else if(s == "F"){
+             sexes = F;
+         }
+         cout << "   Enter birth date ";      cin >> birthDate;
+}
 void Employee::putData(){
     cout << "\nEmployee ID: " << getID();
-    cout << "\nEmployee Name: " << getFirstName() << " " <<getLastName();
+    cout << "\nEmployee Name: " << getFirstName()<< " "<< getLastName();
     cout << "\nBirthday: " << getBirthDate();
 }
-
 void Employee::setLastName(string l){
 	lastName = l;
 }

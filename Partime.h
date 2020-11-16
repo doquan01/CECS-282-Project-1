@@ -11,9 +11,10 @@ class Partime: public Staff{
 		void setHoursPerWeek(int weekHours);
 		int getHoursPerWeek();
 		void putData();
+		void getData();
 		double monthlyEarning();
 		Partime(string lastName, string firstName, string id, Sex s, string birthDate, double r, int weekHours);
-	protected:
+	private:
 		int hoursPerWeek;
 };
 #endif

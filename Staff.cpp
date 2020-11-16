@@ -15,6 +15,10 @@ double Staff::monthlyEarning(){
     monthlySalary = staffHours  * hourlyRate;
     return monthlySalary;
 }
+void Staff::getData(){
+    Employee::getData();
+    cout<<"Enter hourly rate: "; cin>>hourlyRate;
+}
 void Staff::putData(){
 	Employee::putData();
     cout << "\nFull Time \nMonthly Salary: " << monthlyEarning()<<endl;

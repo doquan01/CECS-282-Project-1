@@ -12,7 +12,8 @@ class Staff: public Employee
 		Staff();
 		void setHourlyRate(double r);
 		double getHourlyRate();
-		virtual void putData();
+		void virtual getData();
+		void virtual putData();
 		double monthlyEarning();
 		Staff(string lastName, string firstName, string id, Sex s, string birthDate, double r);
 	protected:

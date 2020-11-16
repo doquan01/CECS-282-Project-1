@@ -10,7 +10,8 @@ class Employee{
 	public:
 		Employee();
 		Employee(string l, string f, string id, Sex s, string b);
-		virtual void putData();
+		void virtual putData();
+		void virtual getData();
 		void setLastName(string l);
 		void setFirstName(string f);
 		void setID(string id);
