@@ -71,7 +71,6 @@ double totalEmploy = 0.0;
             ofstream ouf;              //open ofstream in binary
             employeeType etype;       //type of each employee object
     
-            ouf.open("Employee.DAT", ios::trunc | ios::binary);
             ouf.open("Employee.txt", ios::trunc | ios::binary);
             if(!ouf)
                { cout << "\nCan't open file\n";}
