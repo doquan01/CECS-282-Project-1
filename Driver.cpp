@@ -63,7 +63,7 @@ char ch;
             break;
          }
          case 'w':{            //write employees to file
-             
+         
             break;
          }
          case 'r':{            //read all employees from file
