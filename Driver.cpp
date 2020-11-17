@@ -70,30 +70,26 @@ double totalEmploy = 0.0;
             cout << "Writing " << n << " employees.\n";
             ofstream ouf;              //open ofstream in binary
             employeeType etype;       //type of each employee object
-    
-            ouf.open("Employee.txt", ios::trunc | ios::binary);
+            
+            ouf.open("D:\\GitHub\\CECS-282-Project-1\\employee.txt", ios::trunc | ios::binary);
             if(!ouf)
                { cout << "\nCan't open file\n";}
+            else{
+                cout << "\nFound employee file\n";
+                }
             for(int j=0; j<n; j++){
-                etype = tpartime;
-                cout << "Before if statement, " << etype;
             //get its type
             if(typeid(*work.at(j)) == typeid(Faculty)){
                 etype = tfaculty;
-                cout << etype;
-                return etype;
             }
             else if(typeid(*work.at(j)) == typeid(Staff)){
                 etype = tstaff;
-                return etype;
             }
             else if(typeid(*work.at(j)) == typeid(Partime)){
                 etype = tpartime;
-                cout << etype;
-                return etype;
             }
             else{ cerr << "\nBad employee type"; exit(1); }
-            ouf.write( (char*)&etype, sizeof(etype) );
+            ouf.write((char*)&etype, sizeof(etype) );
          switch(etype)           //find its size
              {
              case tpartime:   size=sizeof(Partime); break;
@@ -104,17 +100,18 @@ double totalEmploy = 0.0;
          if(!ouf)
              { cout << "\nCan't write to file\n";}
           }
+            ouf.close();
          }//write type to file
             break;
          case 'r':{            //read all employees from file
                int size;
             employeeType etype;
             ifstream inf;
-            inf.open("Employee.txt",ios::binary);
+            inf.open("D:\\GitHub\\CECS-282-Project-1\\employee.txt",ios::binary);
             if(!inf){
                cout << "\nCan't open file\n";
             }
-            n = 0;
+            int z = 0;
             while(true){
                inf.read((char*)&etype, sizeof(etype));
                if(inf.eof())
@@ -124,27 +121,27 @@ double totalEmploy = 0.0;
                }
                switch(etype){
                   case (tfaculty):
-                     work[n] = new Faculty;
+                     work[z] = new Faculty;
                      size = sizeof(Faculty);
                      break;
                   case(tstaff):
-                     work[n] = new Staff;
+                     work[z] = new Staff;
                      size = sizeof(Staff);
                      break;
                   case(tpartime):
-                     work[n] = new Partime;
+                     work[z] = new Partime;
                      size = sizeof(Partime);
                      break;
                   default:
                      cout << "\nUnknown type in file\n";
                }
-               inf.read((char*)work[n], size);
+               inf.read((char*)work[z], size);
                if(!inf){
                   cout << "\nCan't read data from file\n";
                }
-               n++;
+               z++;
             }
-            cout << "Reading " << n << " employees\n";
+            cout << "Reading " << z << " employees\n";
             break;
          }
          case 'x':{ 
