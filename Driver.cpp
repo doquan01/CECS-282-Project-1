@@ -17,6 +17,22 @@ double totalEmploy = 0.0;
 int n = 0;
 static vector<Employee*> work(100);
 enum employeeType {tfaculty, tstaff, tpartime}; 
+
+employeeType get_type(){
+    if(typeid(*this) == typeid(Faculty)){
+        return tfaculty;
+    }
+    else if(typeid(*this) == typeid(Staff)){
+        return tstaff;
+    }
+    else if(typeid(*this) == typeid(Partime)){
+        return tpartime;
+    }
+    else
+      { cerr << "\nBad employee type"; exit(1); }
+   return tfaculty;
+}
+
 int main(){
 char ch;
    while(true)
