@@ -13,8 +13,9 @@
 using namespace std;
 double totalPart = 0.0;
 double totalEmploy = 0.0;
+int n = 0;
+static vector<Employee*> work(100);  
 int main(){
-static vector<Employee*> work;  
 char ch;
    while(true)
       {
@@ -36,17 +37,20 @@ char ch;
             cin >> aOp;
             switch(aOp)
               {                       //create specified Employee type
-                 case 'f': work.at(work.size()) = new Faculty;   break;
-                 case 's': work.at(work.size()) = new Staff; break;
-                 case 'p': work.at(work.size()) = new Partime;   break;
+                 case 'f': work[n] = new Faculty;   break;
+                 case 's': work[n] = new Staff; break;
+                 case 'p': work[n] = new Partime;   break;
                  default: cout << "\nUnknown Employee type\n";
               }
-         int n = work.size();
-         work.at(n++)->getData();     //get Employee data from user
+         work[n++]->getData();     //get Employee data from user
             break;
          }
          case 'd':{            //display all employees
-             for (int i = 0; i < work.size(); i++) {
+         if(n == 0){
+             cout<<"There are no employees at the moment"<<endl;
+         }
+         else{
+             for (int i = 0; i < n; i++) {
                   work.at(i)->putData();
                   if(typeid(*work.at(i)) == typeid(Partime)){
                      totalPart += work.at(i)->monthlyEarning();
@@ -55,6 +59,7 @@ char ch;
                 }
                 cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
                 cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
+         }
             break;
          }
          case 'w':{            //write employees to file
