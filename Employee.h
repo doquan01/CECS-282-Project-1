@@ -4,7 +4,6 @@
 #include <iostream>
 
 using namespace std;
-
 enum Sex {M,F};
 class Employee{
 	public:
