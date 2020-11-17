@@ -22,10 +22,10 @@ void Employee::getData(){
          cout << "   Enter first name: "; cin >> firstName;
          cout << "   Enter ID number: ";      cin >> ID;
          cout << "   Enter sex type: ";      cin >> s;
-         if(s == "M"){
+         if(s == "M" || s == "m"){
              sexes = M;
          }
-         else if(s == "F"){
+         else if(s == "F" || s == "f"){
              sexes = F;
          }
          cout << "   Enter birth date ";      cin >> birthDate;

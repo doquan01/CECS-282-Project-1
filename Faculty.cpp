@@ -40,13 +40,13 @@ void Faculty::getData(){
     int r;
     Employee::getData();
     cout<<"Enter position level: "; cin>>l;
-    if(l == "AS"){
+    if(l == "AS" || l == "as"){
         pos = AS;
     }
-    else if(l == "AO"){
+    else if(l == "AO" || l == "ao"){
         pos = AO;
     }
-    else if(l == "FU"){
+    else if(l == "FU" || l == "fu"){
         pos = FU;
     }
     cout<<"Enter degree: "; cin>>d;
