@@ -26,7 +26,6 @@ class Employee{
 		string getSex();
 		string getBirthDate();
 		virtual double monthlyEarning() = 0;
-		virtual employeeType get_Type();
       	static void add();      //add an Employee
       	static void display();  //display all Employees
       	static void read();     //read from disk file
