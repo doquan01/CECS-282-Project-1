@@ -1,6 +1,7 @@
 //Quan Do, Hunter Lewis
-// CECS 282 Project - part 2
+// CECS 282 Project - part 3
 #include <iostream>
+#include <fstream>
 #include "Employee.h"
 #include "Staff.h"
 #include "Faculty.h"
@@ -14,16 +15,7 @@ double totalPart = 0.0;
 double totalEmploy = 0.0;
 int main(){
 static vector<Employee*> work;  
-   for (int i = 0; i < work.size(); i++) {
-      work.at(i)->putData();
-      if(typeid(*work.at(i)) == typeid(Partime)){
-         totalPart += work.at(i)->monthlyEarning();
-      }
-      totalEmploy += work.at(i)->monthlyEarning();
-    }
-    cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
-    cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
-    char ch;
+char ch;
    while(true)
       {
       cout << "'a' -- add data for an employee"
@@ -35,37 +27,50 @@ static vector<Employee*> work;
       cin >> ch;
       switch(ch)
          {
-         case 'a':            //add an employee to list
-            char ch;
+         case 'a':{            //add an employee to list
+            char aOp;
             cout << "'f' to add a faculty"
            "\n's' to add a Staff"
            "\n'p' to add a partime"
            "\nEnter selection: ";
-          cin >> ch;
-            switch(ch)
-      {                       //create specified Employee type
-         case 'f': work.at(work.size()) = new Faculty;   break;
-         case 's': work.at(work.size()) = new Staff; break;
-         case 'p': work.at(work.size()) = new Partime;   break;
-         default: cout << "\nUnknown Employee type\n"; return;
-      }
+            cin >> aOp;
+            switch(aOp)
+              {                       //create specified Employee type
+                 case 'f': work.at(work.size()) = new Faculty;   break;
+                 case 's': work.at(work.size()) = new Staff; break;
+                 case 'p': work.at(work.size()) = new Partime;   break;
+                 default: cout << "\nUnknown Employee type\n";
+              }
          int n = work.size();
          work.at(n++)->getData();     //get Employee data from user
             break;
-         case 'd':            //display all employees
+         }
+         case 'd':{            //display all employees
+             for (int i = 0; i < work.size(); i++) {
+                  work.at(i)->putData();
+                  if(typeid(*work.at(i)) == typeid(Partime)){
+                     totalPart += work.at(i)->monthlyEarning();
+                  }
+                  totalEmploy += work.at(i)->monthlyEarning();
+                }
+                cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
+                cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
+            break;
+         }
+         case 'w':{            //write employees to file
              
             break;
-         case 'w':            //write employees to file
+         }
+         case 'r':{            //read all employees from file
              
             break;
-         case 'r':            //read all employees from file
-             
-            break;
-         case 'x': 
+         }
+         case 'x':{ 
          exit(0);   //exit program
-         
-         default: 
+         }
+         default:{ 
          cout << "\nUnknown command";
+         }
          }  //end switch
       }  //end while
    return 0;
