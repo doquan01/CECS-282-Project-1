@@ -26,17 +26,11 @@ class Employee{
 		string getSex();
 		string getBirthDate();
 		virtual double monthlyEarning() = 0;
-      	static void add();      //add an Employee
-      	static void display();  //display all Employees
-      	static void read();     //read from disk file
-      	static void write();    //write to disk file
 	protected:
 		string lastName;
 		string firstName;
 		string ID;
 		Sex sexes;
 		string birthDate;
-		static int n;
-        static vector<Employee*> work;
 };
 #endif

@@ -13,10 +13,11 @@
 
 using namespace std;
 
+
 int main(){
-char ch;
-vector<*Employee> work(maxEm);
+vector<Employee*> work(maxEm);
 int n;
+char ch;
    while(true)
       {
       cout << "'a' -- add data for an employee"
@@ -72,24 +73,23 @@ int n;
     
             ouf.open("Employee.DAT", ios::trunc | ios::binary);
             if(!ouf)
-               { cout << "\nCan't open file\n"; return; }
+               { cout << "\nCan't open file\n";}
             for(int j=0; j<n; j++){                       
             //get its type
-            if(work[j] == typeid(Faculty){
+            if(typeid(work[j]) == typeid(Faculty)){
                etype = tfaculty;
-               return etype
-            }
-            else if(work[j] == typeid(Staff)){
-               etype = tstaff
                return etype;
             }
-            else if(work[j] == typeid(Partime)){
-               etype = tpartime
+            else if(typeid(work[j]) == typeid(Staff)){
+               etype = tstaff;
+               return etype;
+            }
+            else if(typeid(work[j]) == typeid(Partime)){
+               etype = tpartime;
                return etype;
             }
             else{ cerr << "\nBad employee type"; exit(1); }
-         }//write type to file
-         ouf.write( (char*)&etype, sizeof(etype) );
+            ouf.write( (char*)&etype, sizeof(etype) );
          switch(etype)           //find its size
              {
              case tpartime:   size=sizeof(Partime); break;
@@ -98,10 +98,10 @@ int n;
              }                    //write employee object to file
          ouf.write( (char*)(work[j]), size );
          if(!ouf)
-             { cout << "\nCan't write to file\n"; return; }
+             { cout << "\nCan't write to file\n";}
           }
+         }//write type to file
             break;
-         }
          case 'r':{            //read all employees from file
             Employee::read();
                int size;
@@ -110,7 +110,6 @@ int n;
             inf.open("Employee.DAT",ios::binary);
             if(!inf){
                cout << "\nCan't open file\n";
-               return;
             }
             n = 0;
             while(true){
