@@ -12,26 +12,6 @@
 #include <fstream>
 
 using namespace std;
-double totalPart = 0.0;
-double totalEmploy = 0.0;
-int n = 0;
-static vector<Employee*> work(100);
-enum employeeType {tfaculty, tstaff, tpartime}; 
-
-employeeType get_type(){
-    if(typeid(*this) == typeid(Faculty)){
-        return tfaculty;
-    }
-    else if(typeid(*this) == typeid(Staff)){
-        return tstaff;
-    }
-    else if(typeid(*this) == typeid(Partime)){
-        return tpartime;
-    }
-    else
-      { cerr << "\nBad employee type"; exit(1); }
-   return tfaculty;
-}
 
 int main(){
 char ch;
@@ -47,105 +27,19 @@ char ch;
       switch(ch)
          {
          case 'a':{            //add an employee to list
-            char aOp;
-            cout << "'f' to add a faculty"
-           "\n's' to add a Staff"
-           "\n'p' to add a partime"
-           "\nEnter selection: ";
-            cin >> aOp;
-            switch(aOp)
-              {                       //create specified Employee type
-                 case 'f': work[n] = new Faculty;   break;
-                 case 's': work[n] = new Staff; break;
-                 case 'p': work[n] = new Partime;   break;
-                 default: cout << "\nUnknown Employee type\n";
-              }
-         work[n++]->getData();     //get Employee data from user
+            Employee::add();
             break;
          }
          case 'd':{            //display all employees
-         if(n == 0){
-             cout<<"There are no employees at the moment"<<endl;
-         }
-         else{
-             for (int i = 0; i < n; i++) {
-                  work.at(i)->putData();
-                  if(typeid(*work.at(i)) == typeid(Partime)){
-                     totalPart += work.at(i)->monthlyEarning();
-                  }
-                  totalEmploy += work.at(i)->monthlyEarning();
-                }
-                cout<<"\nTotal monthly salary for all the part-time staff: $"<<totalPart;
-                cout<<"\nTotal monthly salary for all employees: $"<<totalEmploy<<endl;
-         }
+            Employee::display();
             break;
          }
          case 'w':{            //write employees to file
-         int size;
-           cout << "Writing " << n << " employees.\n";
-           ofstream ouf;              //open ofstream in binary
-           employeeType etype;       //type of each employee object
-        
-           ouf.open("Employee.DAT", ios::trunc | ios::binary);
-           if(!ouf)
-              { cout << "\nCan't open file\n"; return; }
-           for(int j=0; j<n; j++)     //for every employee object
-              {                       //get its type
-              etype = work[j]->get_type();
-                                      //write type to file
-              ouf.write( (char*)&etype, sizeof(etype) );
-              switch(etype)           //find its size
-                 {
-                 case tpartime:   size=sizeof(Partime); break;
-                 case tstaff: size=sizeof(Staff); break;
-                 case tfaculty:   size=sizeof(Faculty); break;
-                 }                    //write employee object to file
-              ouf.write( (char*)(work[j]), size );
-              if(!ouf)
-                 { cout << "\nCan't write to file\n"; return; }
-              }
+            Employee::write();
             break;
          }
          case 'r':{            //read all employees from file
-            int size;
-            employeeType etype;
-            ifstream inf;
-            inf.open("Employee.DAT",ios::binary);
-            if(!inf){
-               cout << "\nCan't open file\n";
-               return;
-            }
-            n = 0;
-            while(true){
-               inf.read((char*)&etype, sizeof(etype));
-               if(inf.eof())
-                  break;
-               if(!inf){
-                  cout << "\nCan't read type from file\n";
-               }
-               switch(etype){
-                  case (tfaculty):
-                     work[n] = new Faculty;
-                     size = sizeof(Faculty);
-                     break;
-                  case(tstaff):
-                     work[n] = new Staff;
-                     size = sizeof(Staff);
-                     break;
-                  case(tpartime):
-                     work[n] = new Partime;
-                     size = sizeof(Partime);
-                     break;
-                  default:
-                     cout << "\nUnknown type in file\n";
-               }
-               inf.read((char*)work[n], size);
-               if(!inf){
-                  cout << "\nCan't read data from file\n";
-               }
-               n++;
-            }
-            cout << "Reading " << n << " employees\n";
+            Employee::read();
             break;
          }
          case 'x':{ 
