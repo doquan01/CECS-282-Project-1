@@ -65,7 +65,29 @@ char ch;
             break;
          }
          case 'w':{            //write employees to file
-
+         int size;
+           cout << "Writing " << n << " employees.\n";
+           ofstream ouf;              //open ofstream in binary
+           employee_type etype;       //type of each employee object
+        
+           ouf.open("Employee.DAT", ios::trunc | ios::binary);
+           if(!ouf)
+              { cout << "\nCan't open file\n"; return; }
+           for(int j=0; j<n; j++)     //for every employee object
+              {                       //get its type
+              etype = employees[j]->get_type();
+                                      //write type to file
+              ouf.write( (char*)&etype, sizeof(etype) );
+              switch(etype)           //find its size
+                 {
+                 case tmanager:   size=sizeof(manager); break;
+                 case tscientist: size=sizeof(scientist); break;
+                 case tlaborer:   size=sizeof(laborer); break;
+                 }                    //write employee object to file
+              ouf.write( (char*)(employees[j]), size );
+              if(!ouf)
+                 { cout << "\nCan't write to file\n"; return; }
+              }
             break;
          }
          case 'r':{            //read all employees from file
