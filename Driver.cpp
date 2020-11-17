@@ -70,6 +70,7 @@ char ch;
          }
          case 'r':{            //read all employees from file
             int size;
+            employeeType etype;
             ifstream inf;
             inf.open("Employee.DAT",ios::binary);
             if(!inf){
@@ -78,9 +79,35 @@ char ch;
             }
             n = 0;
             while(true){
-               inf.read(char*())
-
+               inf.read((char*)&etype, sizeof(etype));
+               if(inf.eof())
+                  break;
+               if(!inf){
+                  cout << "\nCan't read type from file\n";
+               }
+               switch(etype){
+                  case (tfaculty):
+                     work[n] = new Faculty;
+                     size = sizeof(Faculty);
+                     break;
+                  case(tstaff):
+                     work[n] = new Staff;
+                     size = sizeof(Staff);
+                     break;
+                  case(tpartime):
+                     work[n] = new Partime;
+                     size = sizeof(Partime);
+                     break;
+                  default:
+                     cout << "\nUnknown type in file\n";
+               }
+               inf.read((char*)work[n], size);
+               if(!inf){
+                  cout << "\nCan't read data from file\n";
+               }
+               n++;
             }
+            cout << "Reading " << n << " employees\n";
             break;
          }
          case 'x':{ 
