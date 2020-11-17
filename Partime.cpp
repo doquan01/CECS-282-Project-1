@@ -12,7 +12,6 @@ int Partime::getHoursPerWeek(){
 void Partime::getData(){
     Staff::getData();
     cout << "\nEnter hours worked per week: "; cin>> hoursPerWeek;
-	cout << "\nEnter Monthly salary: " << monthlyEarning() << endl;
 }
 void Partime::putData(){
 	Employee::putData();
