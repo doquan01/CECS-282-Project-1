@@ -9,12 +9,14 @@
 #include "Constants.h"
 #include <vector>
 #include <typeinfo>
+#include <fstream>
 
 using namespace std;
 double totalPart = 0.0;
 double totalEmploy = 0.0;
 int n = 0;
-static vector<Employee*> work(100);  
+static vector<Employee*> work(100);
+enum employeeType {tfaculty, tstaff, tpartime}; 
 int main(){
 char ch;
    while(true)
@@ -63,11 +65,22 @@ char ch;
             break;
          }
          case 'w':{            //write employees to file
-         
+
             break;
          }
          case 'r':{            //read all employees from file
-             
+            int size;
+            ifstream inf;
+            inf.open("Employee.DAT",ios::binary);
+            if(!inf){
+               cout << "\nCan't open file\n";
+               return;
+            }
+            n = 0;
+            while(true){
+               inf.read(char*())
+
+            }
             break;
          }
          case 'x':{ 
