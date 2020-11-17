@@ -103,8 +103,7 @@ char ch;
          }//write type to file
             break;
          case 'r':{            //read all employees from file
-            Employee::read();
-               int size;
+            int size;
             employeeType etype;
             ifstream inf;
             inf.open("Employee.DAT",ios::binary);
