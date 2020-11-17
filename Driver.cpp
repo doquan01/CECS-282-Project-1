@@ -72,21 +72,26 @@ double totalEmploy = 0.0;
             employeeType etype;       //type of each employee object
     
             ouf.open("Employee.DAT", ios::trunc | ios::binary);
+            ouf.open("Employee.txt", ios::trunc | ios::binary);
             if(!ouf)
                { cout << "\nCan't open file\n";}
-            for(int j=0; j<n; j++){                       
+            for(int j=0; j<n; j++){
+                etype = tpartime;
+                cout << "Before if statement, " << etype;
             //get its type
-            if(typeid(work[j]) == typeid(Faculty)){
-               etype = tfaculty;
-               return etype;
+            if(typeid(*work.at(j)) == typeid(Faculty)){
+                etype = tfaculty;
+                cout << etype;
+                return etype;
             }
-            else if(typeid(work[j]) == typeid(Staff)){
-               etype = tstaff;
-               return etype;
+            else if(typeid(*work.at(j)) == typeid(Staff)){
+                etype = tstaff;
+                return etype;
             }
-            else if(typeid(work[j]) == typeid(Partime)){
-               etype = tpartime;
-               return etype;
+            else if(typeid(*work.at(j)) == typeid(Partime)){
+                etype = tpartime;
+                cout << etype;
+                return etype;
             }
             else{ cerr << "\nBad employee type"; exit(1); }
             ouf.write( (char*)&etype, sizeof(etype) );
@@ -106,7 +111,7 @@ double totalEmploy = 0.0;
                int size;
             employeeType etype;
             ifstream inf;
-            inf.open("Employee.DAT",ios::binary);
+            inf.open("Employee.txt",ios::binary);
             if(!inf){
                cout << "\nCan't open file\n";
             }
