@@ -16,8 +16,10 @@ using namespace std;
 
 int main(){
 vector<Employee*> work(maxEm);
-int n;
+int n = 0;
 char ch;
+double totalPart = 0.0;
+double totalEmploy = 0.0;
    while(true)
       {
       cout << "'a' -- add data for an employee"
@@ -47,8 +49,6 @@ char ch;
             break;
          }
          case 'd':{            //display all employees
-            double totalPart = 0.0;
-            double totalEmploy = 0.0;
             if(n == 0){
              cout<<"There are no employees at the moment"<<endl;
             }
@@ -103,7 +103,7 @@ char ch;
          }//write type to file
             break;
          case 'r':{            //read all employees from file
-            int size;
+               int size;
             employeeType etype;
             ifstream inf;
             inf.open("Employee.DAT",ios::binary);
