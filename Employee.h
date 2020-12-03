@@ -5,10 +5,10 @@
 #include <fstream>
 #include <iostream>
 
+
 using namespace std;
 enum Sex {M,F};
 enum employeeType {tfaculty, tstaff, tpartime};
-const int maxEm = 100;
 class Employee{
 	public:
 		Employee();
@@ -26,11 +26,19 @@ class Employee{
 		string getSex();
 		string getBirthDate();
 		virtual double monthlyEarning() = 0;
+		static void copyVector(vector<Employee*> &v);
+		virtual employeeType get_type();
+		static void add();      
+	    static void display();  
+	    static void read();    
+	    static void write();
 	protected:
 		string lastName;
 		string firstName;
 		string ID;
 		Sex sexes;
 		string birthDate;
+		static int n;
+		static vector<Employee*> work;
 };
 #endif
