@@ -16,7 +16,26 @@ using namespace std;
 
 int main(){
 vector<Employee*> work(maxEm);
-int n = 0;
+Staff* allen = new Staff("Allen", "Paita", "123", M, "2/23/59", 50.00);
+    Faculty* Johnson = new Faculty("Johnson", "Anne", "243", F, "4/27/62", FU, "Ph.D", "Engineering", 3);
+    Staff* Zapata = new Staff("Zapata", "Steven", "456", F, "7/12/64", 35.00);
+    Partime* Depirro = new Partime("Depirro", "Martin", "678", F, "9/15/87", 30.00, 15);
+    Faculty* Bouris = new Faculty("Bouris", "William", "791", F, "3/14/75", AO, "Ph.D", "English", 1);
+    Partime* Guzman = new Partime("Guzman", "Augusto", "455", F, "8/10/77", 35.00, 30);
+    Faculty* Andrade = new Faculty("Andrade", "Christopher", "623", F, "5/22/80", AS, "MS", "Physical Education", 0);
+    Staff* Rios = new Staff("Rios", "Enrique", "789", M, "6/2/70", 40.00);
+    Partime* Aldaco = new Partime("Aldaco", "Marque", "945", M, "11/24/88", 20.00, 35);
+    work[0] = allen;
+    work[1] = Johnson;
+    work[2] = Zapata;
+    work[3] = Depirro;
+    work[4] = Bouris;
+    work[5] = Guzman;
+    work[6] = Andrade;
+    work[7] = Rios;
+    work[8] = Aldaco;
+    
+int n = 9;
 char ch;
 double totalPart = 0.0;
 double totalEmploy = 0.0;
