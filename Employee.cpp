@@ -10,18 +10,18 @@ const int maxEm = 100;
 int Employee::n;
 vector<Employee*> Employee::work(maxEm);
 
-Employee::Employee(){
-	lastName = "";
-	firstName = "";
-	ID = "";
-	birthDate = "";
+Employee::Employee(){ //fix this
+	lastName[LEN] = "";
+	firstName[LEN] = "";
+	ID[LEN] = "";
+	birthDate[LEN] = "";
 }
-Employee::Employee(string l, string f, string id, Sex s, string b){
-	lastName = l;
-	firstName = f;
-	ID = id;
+Employee::Employee(string l, string f, string id, Sex s, string b){ //Fix this
+	lastName[LEN] = l;
+	firstName[LEN] = f;
+	ID[LEN] = id;
 	sexes = s;
-	birthDate = b;
+	birthDate[LEN] = b;
 }
 void Employee::getData(){
     cin.ignore(10, '\n');
@@ -115,7 +115,17 @@ void Employee::display(){
   for(int j=0; j<n; j++)
   {
   cout  << (j+1);           //display number
-  switch( work[j]->get_type() )   //display type
+  employeeType etype;
+  if( typeid(*work.at(j)) == typeid(Faculty) ){
+   	etype = tfaculty;
+   }
+   else if( typeid(*work.at(j))==typeid(Staff) ){
+   	etype = tstaff;
+   }  
+   else if( typeid(*work.at(j))==typeid(Partime) ){
+   	etype = tpartime;
+   }
+  switch( etype )   //display type
      {
      case tfaculty:{
      	cout << ". Type: Faculty";
@@ -146,7 +156,17 @@ int size;
       { cout << "\nCan't open file\n"; return; }
    for(int j=0; j<n; j++)     //for every employee object
       {                       //get its type
-      etype = work[j]->get_type();
+//        etype = work[j]->get_type();
+	  if( typeid(*work.at(j)) == typeid(Faculty) ){
+	   	etype = tfaculty;
+	   }
+	   else if( typeid(*work.at(j))==typeid(Staff) ){
+	   	etype = tstaff;
+	   }  
+	   else if( typeid(*work.at(j))==typeid(Partime) ){
+	   	etype = tpartime;
+	   }
+	   else{ cerr << "\nBad employee type"; exit(1); }
                               //write type to file
       ouf.write( (char*)&etype, sizeof(etype) );
       switch(etype)           //find its size

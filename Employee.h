@@ -1,6 +1,7 @@
 #ifndef Employee_H
 #define Employee_H
 #include <vector>
+#include "Constants.h"
 #include <typeinfo>
 #include <fstream>
 #include <iostream>
@@ -33,11 +34,11 @@ class Employee{
 	    static void read();    
 	    static void write();
 	protected:
-		string lastName;
-		string firstName;
-		string ID;
+		char lastName[LEN];
+		char firstName[LEN];
+		char ID[LEN];
 		Sex sexes;
-		string birthDate;
+		char birthDate[LEN];
 		static int n;
 		static vector<Employee*> work;
 };
