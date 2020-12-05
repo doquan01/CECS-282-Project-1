@@ -11,17 +11,17 @@ int Employee::n;
 vector<Employee*> Employee::work(maxEm);
 
 Employee::Employee(){ //fix this
-	lastName[LEN] = "";
-	firstName[LEN] = "";
-	ID[LEN] = "";
-	birthDate[LEN] = "";
+	lastName = "";
+	firstName = "";
+	ID = "";
+	birthDate = "";
 }
 Employee::Employee(string l, string f, string id, Sex s, string b){ //Fix this
-	lastName[LEN] = l;
-	firstName[LEN] = f;
-	ID[LEN] = id;
+	lastName = l;
+	firstName = f;
+	ID = id;
 	sexes = s;
-	birthDate[LEN] = b;
+	birthDate = b;
 }
 void Employee::getData(){
     cin.ignore(10, '\n');
@@ -79,21 +79,18 @@ string Employee::getBirthDate(){
 	return birthDate;
 }
 employeeType Employee::get_type()
-   {
-   if( typeid(*this) == typeid(Faculty) ){
-   	return tfaculty;
-   }
-   else if( typeid(*this)==typeid(Staff) ){
-   	return tstaff;
-   }  
-   else if( typeid(*this)==typeid(Partime) ){
-   	return tpartime;
-   }
-   else{ 
-	  cerr << "\nBad employee type"; 
-	  exit(1); 
-	  }
-   }
+{
+    if (typeid(*this) == typeid(Faculty))
+        return tfaculty;
+    else if (typeid(*this) == typeid(Staff))
+        return tstaff;
+    else if (typeid(*this) == typeid(Partime))
+        return tpartime;
+    else
+    {
+        cerr << "\nBad employee type"; exit(1);
+    }
+}
    
 void Employee::add(){
 	char aOp;
@@ -116,15 +113,7 @@ void Employee::display(){
   {
   cout  << (j+1);           //display number
   employeeType etype;
-  if( typeid(*work.at(j)) == typeid(Faculty) ){
-   	etype = tfaculty;
-   }
-   else if( typeid(*work.at(j))==typeid(Staff) ){
-   	etype = tstaff;
-   }  
-   else if( typeid(*work.at(j))==typeid(Partime) ){
-   	etype = tpartime;
-   }
+  etype = work[j]->get_type();
   switch( etype )   //display type
      {
      case tfaculty:{
@@ -145,47 +134,12 @@ void Employee::display(){
   cout << endl;
   }
 }
-void Employee::write(){
-int size;
-   cout << "Writing " << n << " employees.\n";
-   ofstream ouf;              //open ofstream in binary
-   employeeType etype;       //type of each employee object
-
-   ouf.open("employee.dat", ios::trunc | ios::binary);
-   if(!ouf)
-      { cout << "\nCan't open file\n"; return; }
-   for(int j=0; j<n; j++)     //for every employee object
-      {                       //get its type
-//        etype = work[j]->get_type();
-	  if( typeid(*work.at(j)) == typeid(Faculty) ){
-	   	etype = tfaculty;
-	   }
-	   else if( typeid(*work.at(j))==typeid(Staff) ){
-	   	etype = tstaff;
-	   }  
-	   else if( typeid(*work.at(j))==typeid(Partime) ){
-	   	etype = tpartime;
-	   }
-	   else{ cerr << "\nBad employee type"; exit(1); }
-                              //write type to file
-      ouf.write( (char*)&etype, sizeof(etype) );
-      switch(etype)           //find its size
-         {
-         case tfaculty:   size=sizeof(Faculty); break;
-         case tstaff: size=sizeof(Staff); break;
-         case tpartime:   size=sizeof(Partime); break;
-         }                    //write employee object to file
-      ouf.write( (char*)(work[j]), size );
-      if(!ouf)
-         { cout << "\nCan't write to file\n"; return; }
-      }
-}
 void Employee::read(){
 	   {
    int size;                  //size of employee object
    employeeType etype;       //type of employee
    ifstream inf;              //open ifstream in binary
-   inf.open("employee.dat", ios::binary);
+   inf.open("EMPLOY.DAT", ios::binary);
    if(!inf)
       { cout << "\nCan't open file\n"; return; }
    n = 0;                     //no employees in memory yet
@@ -220,14 +174,45 @@ void Employee::read(){
    cout << "Reading " << n << " employees\n";
    }
 }
-void Employee::copyVector(vector<Employee*> &v){
+void Employee::write()
+   {
+   int size = 0;
+   cout << "Writing " << n << " employees.\n";
+   ofstream ouf;              //open ofstream in binary
+   employeeType etype;       //type of each employee object
+
+   ouf.open("EMPLOY.DAT", ios::trunc | ios::binary);
+   if(!ouf)
+      { cout << "\nCan't open file\n"; return; }
+   for(int j=0; j<n; j++)     //for every employee object
+      {                       //get its type
+      etype = work[j]->get_type();
+      if( typeid(*work.at(j)) == typeid(Faculty) ){
+	   	etype = tfaculty;
+	   }
+	   else if( typeid(*work.at(j))==typeid(Staff) ){
+	   	etype = tstaff;
+	   }  
+	   else if( typeid(*work.at(j))==typeid(Partime) ){
+	   	etype = tpartime;
+	   }
+                              //write type to file
+      ouf.write( (char*)&etype, sizeof(etype) );
+      switch(etype)           //find its size
+         {
+         case tfaculty:   size=sizeof(Faculty); break;
+         case tstaff: size=sizeof(Staff); break;
+         case tpartime:   size=sizeof(Partime); break;
+         }                    //write employee object to file
+      ouf.write( (char*)(work[j]), size );
+      if(!ouf)
+         { cout << "\nCan't write to file\n"; return; }
+      }
+   }
+void Employee::copyVector(vector<Employee*> const &v){
 	for(int i = 0; i < v.size(); i++){
 		work[i] = v[i];
 		++n;
 	}
 }
-
-
-
-
 
