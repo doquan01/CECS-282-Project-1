@@ -187,15 +187,6 @@ void Employee::write()
    for(int j=0; j<n; j++)     //for every employee object
       {                       //get its type
       etype = work[j]->get_type();
-      if( typeid(*work.at(j)) == typeid(Faculty) ){
-	   	etype = tfaculty;
-	   }
-	   else if( typeid(*work.at(j))==typeid(Staff) ){
-	   	etype = tstaff;
-	   }  
-	   else if( typeid(*work.at(j))==typeid(Partime) ){
-	   	etype = tpartime;
-	   }
                               //write type to file
       ouf.write( (char*)&etype, sizeof(etype) );
       switch(etype)           //find its size
@@ -215,4 +206,3 @@ void Employee::copyVector(vector<Employee*> const &v){
 		++n;
 	}
 }
-

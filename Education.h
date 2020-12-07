@@ -10,9 +10,11 @@ class Education{
 		void setDegree(string d);
 		void setMajor(string m);
 		void setResearch(int r);
+		
 		string getDegree();
 		string getMajor();
 		int getResearch(); 
+		
 		Education();
 		Education(string d, string m, int r);
 	protected:

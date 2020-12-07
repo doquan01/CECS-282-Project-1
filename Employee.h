@@ -27,18 +27,18 @@ class Employee{
 		string getSex();
 		string getBirthDate();
 		virtual double monthlyEarning() = 0;
-		static void copyVector(vector<Employee*> &v);
+		static void copyVector(vector<Employee*> const &v);
 		virtual employeeType get_type();
 		static void add();      
 	    static void display();  
 	    static void read();    
 	    static void write();
 	protected:
-		char lastName[LEN];
-		char firstName[LEN];
-		char ID[LEN];
+		string lastName;
+		string firstName;
+		string ID;
 		Sex sexes;
-		char birthDate[LEN];
+		string birthDate;
 		static int n;
 		static vector<Employee*> work;
 };
